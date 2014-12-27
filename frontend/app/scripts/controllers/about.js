@@ -8,10 +8,14 @@
  * Controller of the pribitokApp
  */
 angular.module('pribitokApp')
-  .controller('AboutCtrl', function ($scope) {
+  .controller('AboutCtrl', AboutController)
+
+AboutController.$inject = ['$scope', '$translate'];
+
+function AboutController($scope, $translate) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
     ];
-  });
+};

@@ -15,12 +15,13 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'pascalprecht.translate'
   ]).config(configure);
 
-configure.$inject = ['$routeProvider', '$locationProvider'];
+configure.$inject = ['$routeProvider', '$locationProvider', '$translateProvider'];
 
-function configure($routeProvider, $locationProvider) {
+function configure($routeProvider, $locationProvider, $translateProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -35,4 +36,15 @@ function configure($routeProvider, $locationProvider) {
       });
 
     $locationProvider.html5Mode(true);
+
+    $translateProvider
+        .translations('en', {
+            HEADLINE: 'Hello there, This is my awesome app!',
+            INTRO_TEXT: 'And it has i18n support!'
+        })
+        .translations('de', {
+            HEADLINE: 'Hey, das ist meine großartige App!',
+            INTRO_TEXT: 'Und sie untersützt mehrere Sprachen!'
+        });
+    $translateProvider.preferredLanguage('en');
 }
