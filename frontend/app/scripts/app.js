@@ -16,8 +16,11 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch'
-  ])
-  .config(function ($routeProvider) {
+  ]).config(configure);
+
+configure.$inject = ['$routeProvider', '$locationProvider'];
+
+function configure($routeProvider, $locationProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -30,4 +33,6 @@ angular
       .otherwise({
         redirectTo: '/'
       });
-  });
+
+    $locationProvider.html5Mode(true);
+}
