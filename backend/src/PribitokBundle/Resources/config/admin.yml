@@ -1,0 +1,12 @@
+# PribitokBundle/Resources/config/admin.yml
+services:
+    sonata.admin.languagess:
+        class: PribitokBundle\Admin\LanguageAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Data", label: "Languages" }
+        arguments:
+            - ~
+            - PribitokBundle\Entity\Language
+            - ~
+        calls:
+            - [ setTranslationDomain, [PribitokBundle]]
