@@ -23,7 +23,8 @@
         "sonata-project/block-bundle": "dev-master",
         "sonata-project/jquery-bundle": "dev-master",
         "knplabs/knp-menu": "dev-master",
-        "sonata-project/core-bundle": "dev-master"
+        "sonata-project/core-bundle": "dev-master",
+        "friendsofsymfony/user-bundle": "~2.0@dev"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"
