@@ -1,0 +1,3 @@
+limycuk_pribitok_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: LimycukPribitokBundle:Default:index }

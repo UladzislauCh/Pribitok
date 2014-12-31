@@ -1,3 +1,0 @@
-pribitok_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: PribitokBundle:Default:index }

@@ -20,11 +20,13 @@
         "incenteev/composer-parameter-handler": "~2.0",
         "sonata-project/admin-bundle": "dev-master",
         "sonata-project/doctrine-orm-admin-bundle": "dev-master",
-        "sonata-project/block-bundle": "dev-master",
         "sonata-project/jquery-bundle": "dev-master",
         "knplabs/knp-menu": "dev-master",
         "sonata-project/core-bundle": "dev-master",
-        "friendsofsymfony/user-bundle": "~2.0@dev"
+        "friendsofsymfony/user-bundle": "~2.0@dev",
+        "sonata-project/media-bundle": "2.3.@dev",
+        "jms/serializer-bundle": "0.13.0",
+        "sonata-project/intl-bundle": "2.2.*@dev"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"

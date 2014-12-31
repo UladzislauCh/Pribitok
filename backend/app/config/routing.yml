@@ -1,9 +1,9 @@
-pribitok:
-    resource: "@PribitokBundle/Resources/config/routing.yml"
-    prefix:   /api
+limycuk_user:
+    resource: "@LimycukUserBundle/Resources/config/routing.yml"
+    prefix:   /
 
-user:
-    resource: "@UserBundle/Resources/config/routing.yml"
+limycuk_pribitok:
+    resource: "@LimycukPribitokBundle/Resources/config/routing.yml"
     prefix:   /
 
 admin:
@@ -18,3 +18,11 @@ _sonata_admin:
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
     prefix: /admin
+
+gallery:
+    resource: '@SonataMediaBundle/Resources/config/routing/gallery.xml'
+    prefix: /media/gallery
+
+media:
+    resource: '@SonataMediaBundle/Resources/config/routing/media.xml'
+    prefix: /media
