@@ -8,10 +8,15 @@
  * Controller of the pribitokApp
  */
 angular.module('pribitokApp')
-  .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+    .controller('MainCtrl', MainCtrl)
+
+MainCtrl.$inject = ['$scope', 'applicationResource'];
+
+function MainCtrl($scope, applicationResource) {
+
+    applicationResource.query({lang: $scope.language.title}).$promise.then(function (result) {
+        $scope.applications = result;
+        console.log(result);
+    })
+
+}

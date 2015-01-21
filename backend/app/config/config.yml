@@ -3,6 +3,7 @@ imports:
     - { resource: security.yml }
     - { resource: services.yml }
     - { resource: @LimycukPribitokBundle/Resources/config/admin.yml }
+    - { resource: @LimycukPribitokBundle/Resources/config/services.yml }
 
 framework:
     #esi:             ~

@@ -4,7 +4,7 @@ limycuk_user:
 
 limycuk_pribitok:
     resource: "@LimycukPribitokBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /api
 
 admin:
     resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'

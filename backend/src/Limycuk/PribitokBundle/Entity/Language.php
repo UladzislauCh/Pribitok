@@ -30,14 +30,9 @@ class Language
     protected $json;
 
     /**
-     * Get id
-     *
-     * @return integer 
+     * @ORM\OneToMany(targetEntity="Application", mappedBy="language")
      */
-    public function g0etId()
-    {
-        return $this->id;
-    }
+    protected $applications;
 
     /**
      * Set title
@@ -93,5 +88,65 @@ class Language
     public function getJson()
     {
         return $this->json;
+    }
+
+    public function getPublicVersion()
+    {
+        $language = new \stdClass();
+        $language->id = $this->getId();
+        $language->title = $this->getTitle();
+
+        if ($this->getJson()) {
+            $language->json = $this->getJson()->getPublicImageVersion();
+        } else {
+            $language->json = null;
+        }
+
+        return $language;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->applications = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add applications
+     *
+     * @param \Limycuk\PribitokBundle\Entity\Application $applications
+     * @return Language
+     */
+    public function addApplication(\Limycuk\PribitokBundle\Entity\Application $applications)
+    {
+        $this->applications[] = $applications;
+
+        return $this;
+    }
+
+    /**
+     * Remove applications
+     *
+     * @param \Limycuk\PribitokBundle\Entity\Application $applications
+     */
+    public function removeApplication(\Limycuk\PribitokBundle\Entity\Application $applications)
+    {
+        $this->applications->removeElement($applications);
+    }
+
+    /**
+     * Get applications
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getApplications()
+    {
+        return $this->applications;
+    }
+
+    public function __toString()
+    {
+        return $this->title;
     }
 }

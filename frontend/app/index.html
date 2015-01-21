@@ -5,40 +5,74 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
+    <base href="/">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="bower_components/slick-carousel/slick/slick.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
+    <link media="only screen and (max-width:1000px)" href="css/media.css" rel="stylesheet">
     <!-- endbuild -->
-    <base href="/">
   </head>
-  <body ng-app="pribitokApp">
-    <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
+  <body ng-app="pribitokApp" ng-cloak>
+
+  <div ng-controller="LanguageCtrl" ng-cloak>
 
     <!-- Add your site or application content here -->
-    <div class="container">
-      <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li><a ng-href="/">HOME</a></li>
-          <li><a ng-href="/about">APPS</a></li>
-          <li><a ng-href="/">GAMES</a></li>
-          <li><a ng-href="/">CONTACT</a></li>
-        </ul>
-        <h3 class="text-muted">pribitok</h3>
-      </div>
+      <div class="wrapper">
+          <div class="header">
+              <div class="content-inner">
+                  <a href="/" class="logo">
+                      <img src="images/logo.png">
+                  </a>
+                  <nav>
+                      <ul>
+                          <li ng-repeat="menu in staticData.mainMenu"><a href="{{ menu.link }}">{{ menu.title | uppercase}}</a></li>
+                      </ul>
+                  </nav>
+                  <div class="select-lang">
+                      <div><span>{{ language.title | uppercase }}</span></div>
+                      <ul>
+                          <li ng-repeat="lang in languages" ng-class="{select: language.title == lang.title}" ng-click="update(lang)"><span>{{ lang.title | uppercase }}</span></li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
 
-      <div ng-view=""></div>
-
-      <div class="footer">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
-      </div>
+        <div ng-view="" ng-cloak class="content"></div>
+      <footer class="footer">
+          <div class="content-inner">
+              <div class="about-us-block">
+                  <h6>{{ staticData.footer.about }}</h6>
+                  <p>Smartphones, the evolution of mobile computers, are changing the way we live. Each day more people use them to communicate, search the web, solve problems and play. Apple iOS and Android are best platforms for developing great applications with best user experience.</p>
+                  <p>SIS software is a registered Apple iOS Developer since March 2008. We have design and technical expertise needed to develop a wide range of highly-optimized iOS applications.</p>
+                  <p class="copyright">(c) 2015, Grymala</p>
+              </div>
+              <div class="contacts-block">
+                  <div class="contact-item first-item"></h6>
+                      <p class="company-name">Grymala</p>
+                  </div>
+                  <div class="contact-item">
+                      <p class="ct">{{ staticData.footer.phone }}</p>
+                      <p>+37529 3154530<br>+37529 6528802</p>
+                  </div>
+                  <div class="contact-item">
+                      <p class="ct">{{ staticData.footer.address }}</p>
+                      <p>ул. Масюковщина 2В,Минск, Беларусь</p>
+                  </div>
+                  <div class="contact-item">
+                      <p class="ct">{{ staticData.footer.email }}</p>
+                      <p>grymalaltd@gmail.com</p>
+                  </div>
+              </div>
+          </div>
+      </footer>
     </div>
-
+  </div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
@@ -80,14 +114,20 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
-    <script src="bower_components/angular-translate/angular-translate.js"></script>
+    <script src="bower_components/slick-carousel/slick/slick.min.js"></script>
+    <script src="bower_components/angular-slick/dist/slick.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
-        <!-- endbuild -->
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/app.settings.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/apps.js"></script>
+    <script src="scripts/controllers/language.js"></script>
+    <script src="scripts/controllers/app.detail.js"></script>
+    <script src="scripts/services/language.resource.js"></script>
+    <script src="scripts/services/applications.resource.js"></script>
+    <!-- endbuild -->
 </body>
 </html>

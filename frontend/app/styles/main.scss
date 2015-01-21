@@ -1,92 +1,997 @@
 $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
-// bower:scss
-@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
-
-.browsehappy {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
+@font-face {
+  font-family: 'CalibriRegular';
+  src: url('../fonts/Calibri.eot');
+  src: url('../fonts/Calibri.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Calibri.woff') format('woff'),
+  url('../fonts/calibri.ttf') format('truetype'),
+  url('../fonts/Calibri.svg#CalibriRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
-
-/* Space out content a bit */
+@font-face {
+  font-family: 'CalibriBold';
+  src: url('../fonts/calibrib.eot');
+  src: url('../fonts/calibrib.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/calibrib.woff') format('woff'),
+  url('../fonts/calibrib.ttf') format('truetype'),
+  url('../fonts/calibrib.svg#CalibriBold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Eric Meyer's CSS Reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
 body {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* End of Eric Meyer's CSS Reset */
+
+html {
+  height: 100%;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+  display: block;
+}
+body {
+  font: 12px/18px CalibriRegular, Arial, sans-serif;
+  width: 100%;
+  height: 100%;
+  background: url(../images/bg_body.jpg) no-repeat center top #010101;
+  color: #fff;
 }
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-  padding-left: 15px;
-  padding-right: 15px;
+.wrapper {
+  min-width: 960px;
+  max-width: 1920px;
+  margin: 0 auto;
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
 }
 
-/* Custom page header */
+.content-inner {
+  padding: 0 10px;
+  width: 960px;
+  margin: 0 auto;
+}
+
+/* Header
+-----------------------------------------------------------------------------*/
 .header {
-  border-bottom: 1px solid #e5e5e5;
-
-  /* Make the masthead heading the same height as the navigation */
-  h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 40px;
-    padding-bottom: 19px;
-  }
+  height: 90px;
+  background: url(../images/menu_glava_bg.jpg) no-repeat center;
+  position: relative;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-top: 25px;
 }
-
-/* Custom page footer */
-.footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
+.line-b_ {
+  position: relative;
 }
-
-.container-narrow > hr {
-  margin: 30px 0;
+.line-b_:after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  bottom: 0px;
+  background: url(../images/home_glava_bg_rob.jpg) no-repeat center;
 }
-
-/* Main marketing message and sign up button */
-.jumbotron {
+.header .content-inner {
+  /* overflow: hidden; */
+  position: relative;
+}
+.logo {
+  /* display: inline-block; */
+  /* vertical-align: bottom; */
+  /* text-decoration: none; */
+  float: left;
+}
+nav {
+  overflow: hidden;
+  /* display: inline-block; */
+  /* vertical-align: bottom; */
+  margin: 14px 90px 7px 0px;
+  float: right;
+}
+nav li {
+  float: left;
+  margin-left: 20px;
+}
+nav li a {
+  color: #fff;
+  text-decoration: none;
+  font: 24px/24px CalibriBold;
+  text-transform: uppercase;
+}
+nav li.select a,
+nav li a:hover {
+  text-decoration: underline;
+}
+.select-lang {
   text-align: center;
-  border-bottom: 1px solid #e5e5e5;
-
-  .btn {
-    font-size: 21px;
-    padding: 14px 24px;
-  }
+  width: 24px;
+  position: absolute;
+  top: -6px;
+  font-size: 14px;
+  color: #9b9999;
+  right: 0;
 }
+.select-lang span {
+  cursor: pointer;
+  display: inline-block;
+}
+.select-lang>div span {
+  border-bottom: 1px dotted #9b9999;
+}
+.select-lang>div span:hover {
+  border-color: #fff;
+  color: #fff;
+}
+.select-lang span:hover,
+.select-lang .select span{
+  color: #fff;
+}
+.select-lang ul {
+  margin-top: 7px;
+  padding: 3px 0;
+  background: #212121;
+  position: relative;
+  z-index: 10;
+}
+.select-lang ul:after {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  margin-left: -5px;
+  border-left: 5px solid rgba(0, 0, 0, 0);
+  border-right: 5px solid transparent;
+  border-bottom: 7px solid #212121;
+}
+/* Middle
+-----------------------------------------------------------------------------*/
+.content {
+  padding: 0 0 250px;
+}
+.promo-block {
+  background: #121212;
+  height: 455px;
+}
+.promo-block .content-inner {
+  background: url(../images/gad.png) no-repeat 10px -95px;
+  height: 455px;
+  position: relative;
+}
+.promo-block .desc {
+  text-align: center;
+  color: #fff;
+  position: absolute;
+  top: 63px;
+  width: 315px;
+  right: 62px;
+}
+.desc h3 {
+  font: 30px/34px CalibriBold;
+  margin-bottom: 10px;
+}
+.promo-menu {
+  text-align: center;
+  margin-top: 17px;
+}
+.promo-menu li{
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 10px;
+}
+.promo-menu a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+}
+.promo-menu a.box-l {
+  text-decoration: none;
+  font-size: 16px;
+  text-align: center;
+  color: #fff;
+  display: block;
+  width: 63px;
+  margin: 0 auto;
+}
+.desc>p {
+  font-size: 20px;
+  width: 240px;
+  margin: 0 auto;
+  line-height: 24px;
+}
+.blue-box {
+  font-size: 37px;
+  width: 62px;
+  height: 62px;
+  border-radius: 15px;
+  background: #6edcf5; /* Old browsers */
+  background: -moz-linear-gradient(top,  #6edcf5 1%, #00388a 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#6edcf5), color-stop(100%,#00388a)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #6edcf5 1%,#00388a 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #6edcf5 1%,#00388a 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #6edcf5 1%,#00388a 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #6edcf5 1%,#00388a 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6edcf5', endColorstr='#00388a',GradientType=0 ); /* IE6-9 */
+  color: #fff;
+  text-shadow: 1px 1px 0px #00388A;
+}
+.blue-box:hover {
+  background: #69dfea; /* Old browsers */
+  background: -moz-linear-gradient(top,  #69dfea 0%, #032d6b 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#69dfea), color-stop(100%,#032d6b)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #69dfea 0%,#032d6b 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #69dfea 0%,#032d6b 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #69dfea 0%,#032d6b 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #69dfea 0%,#032d6b 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#69dfea', endColorstr='#032d6b',GradientType=0 ); /* IE6-9 */
+}
+.blue-box i {
+  line-height: 63px;
+}
+.three-apps-block {
+  padding: 20px 0;
+  background: #101010;
+  overflow: hidden;
+}
+.app-item {
+  width: 300px;
+  margin-right: 10px;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: top;
+  height: 100px;
+  position: relative;
+}
+.three-apps-block .app-item:after {
+  content: '';
+  display: inline-block;
+  width: 100%;
+  height: 15px;
+  box-shadow: inset 0px -25px 15px -12px #101010;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.app-item .left_ {
+  float: left;
+  width: 80px;
+  height: 80px;
+  margin-right: 10px;
+}
+.app-item .left_ img{
+  width: 80px;
+  height: 80px;
+}
+.app-item .left img {
+  border-radius: 10px;
+}
+.app-item .right_ {
+  float: left;
+  color: #ccc;
+  width: 210px;
+}
+.app-item .name {
+  font: 18px/15px CalibriBold;
+  margin-bottom: 4px;
+  text-decoration: underline;
+}
+.app-item .name:hover,
+.app-item:hover .name{
+  text-decoration: none;
+}
+.app-item .genre {
+  font: 14px/16px CalibriBold;
+  margin-bottom: 4px;
+}
+.genre i {
+  margin-left: 2px;
+  font-size: .9em;
+  position: relative;
+  top: 1px;
+}
+.app-item .description {
+  font-size: 13px;
+  line-height: 16px;
+}
+.apps-list {
+  margin-top: 30px;
+}
+h1.page-title {
+  font: 28px/32px CalibriBold;
+  color: #fff;
+  text-shadow: 0 1px 1px rgba(0,0,0,.7);
+  margin-bottom: 20px;
 
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
+}
+.apps-list .app-item {
+  margin-bottom: 20px;
+}
+.apps-list .app-item .name,
+.apps-list .app-item .genre {
+  color: #fff;
+}
+.apps-list .app-item .genre i {
+  opacity: .8;
+}
+.app {
+  overflow: hidden;
+  margin-top: 30px;
+}
+.app .left_ {
+  float: left;
+  width: 180px;
+  margin-right: 20px;
+}
+.app .right_ {
+  float: left;
+}
+.app .right_ .name {
+  font: 34px/38px CalibriBold;
+  color: #fff;
+  text-shadow: 0 1px 1px rgba(0,0,0,.7);
+}
+.app .right_ .genre {
+  font-size: 16px;
+  font-weight: 500;
+}
+.app .right_ .params {
+  overflow: hidden;
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #ccc;
+}
+.app .right_ .params>div {
+  float: left;
+  margin-right: 20px;
+}
+.app .right_ .params .title {
+  font-weight: 400;
+  font-size: 15px;
+}
+.btn-android {
+  margin-top: 10px;
+  display: inline-block;
+  width: 138px;
+  height: 41px;
+  background: url(../images/buttons.png) no-repeat 0 0;
+}
+.btn-ios {
+  margin-top: 10px;
+  display: inline-block;
+  width: 137px;
+  height: 41px;
+  background: url(../images/buttons.png) no-repeat -140px 0;
+}
+.slider {
+  padding: 20px 0;
+  background: #dbdbdb;
+  overflow: hidden;
+}
+.slider img {
+  margin: 0 5px;
+  float: left;
+  height: 170px;
+}
+.app-descripton {
+  padding: 30px 0;
+  background: #f8f8f8;
+  color: #434343;
+  font-size: 14px;
+  line-height: 18px;
+}
+.app-descripton h2 {
+  font: 24px/28px CalibriBold;
+  margin-bottom: 15px;
+}
+.app-descripton p {
+  margin-bottom: 8px;
+}
+.app-descripton ul+h4,
+.app-descripton p+h4 {
+  margin-top: 20px;
+}
+.app-descripton h4 {
+  color: #005ea5;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.app-descripton ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+.app-descripton ol {
+  list-style-type: decimal;
+  margin-left: 25px;
+}
+.app-descripton li {
+  margin-bottom: 3px;
+  color: #005ea5;
+}
+.app-descripton li span {
+  color: #434343;
+}
+/* Footer
+-----------------------------------------------------------------------------*/
+.footer {
+  padding: 0 10px;
+  width: 960px;
+  margin: -250px auto 0;
+  height: 220px;
+  color: #9b9999;
+  position: relative;
+  padding-top: 30px;
+}
+.footer h6 {
+  font: 15px/18px CalibriBold;
+  margin-bottom: 10px;
+}
+.footer p {
+  margin-bottom: 8px;
+  font: 300 13px/16px Calibri;
+}
+.about-us-block {
+  width: 600px;
+  float: left;
+  padding-right: 10px;
+  margin-right: 22px;
+  position: relative;
+}
+.about-us-block:after {
+  content: '';
+  display: inline-block;
 
-  p + h4 {
+  width: 1px;
+  height: 70px;
+  background: #1e1e1e;
+  position: absolute;
+  top: 32px;
+  right: 0px;
+}
+.copyright {
+  color: #5a5a5a;
+}
+.footer .contacts-block {
+  width: 280px;
+  float: left;
+}
+.contact-item {
+  overflow: hidden;
+}
+.contact-item p {
+  float: left;
+  font-weight: 600;
+  font-size: 14px;
+  width: 138px;
+}
+.contact-item .ct {
+  font: 300 13px/16px Calibri;
+  float: left;
+  width: 70px;
+}
+.footer .company-name {
+  font-family: CalibriBold;
+  font-size: 16px;
+}
+@media only screen and (max-device-width: 1100px) {
+  .wrapper {
+    min-width: 960px;
+    max-width: 1920px;
+    /* padding: 0 10px; */
+    margin: 0 auto;
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+  }
+  .content-inner {
+    padding: 0 10px;
+    width: 940px;
+    margin: 0 auto;
+  }
+
+  /* Header
+  -----------------------------------------------------------------------------*/
+  .header {
+    height: 160px;
+    background: url(../images/menu_glava_bg_m.jpg) no-repeat center;
+  }
+  .line-b_ {
+    position: relative;
+  }
+  .line-b_:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    bottom: 0px;
+    background: url(../images/home_glava_bg_rob.jpg) no-repeat center;
+  }
+  .header .content-inner {
+    /* overflow: hidden; */
+    position: relative;
+  }
+  .logo {
+    width: 400px;
+    margin: 10px auto;
+    float: none;
+    display: block;
+  }
+  nav {
+    overflow: hidden;
+    float: none;
+    margin: 10px 0;
+    text-align: center;
+  }
+  nav li {
+    float: none;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 10px;
+  }
+  nav li a {
+    color: #fff;
+    text-decoration: none;
+    font: 42px/48px CalibriBold;
+    text-transform: uppercase;
+  }
+
+  .select-lang {
+    text-align: center;
+    width: 24px;
+    position: absolute;
+    top: -6px;
+    font-size: 14px;
+    color: #9b9999;
+    right: 20px;
+  }
+  .select-lang span {
+    cursor: pointer;
+    display: inline-block;
+  }
+  .select-lang>div span {
+    border-bottom: 1px dotted #9b9999;
+  }
+  .select-lang>div span:hover {
+    border-color: #fff;
+    color: #fff;
+  }
+  .select-lang span:hover,
+  .select-lang .select span{
+    color: #fff;
+  }
+  .select-lang ul {
+    margin-top: 7px;
+    padding: 3px 0;
+    background: #212121;
+    position: relative;
+    z-index: 10;
+  }
+  .select-lang ul:after {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    margin-left: -5px;
+    border-left: 5px solid rgba(0, 0, 0, 0);
+    border-right: 5px solid transparent;
+    border-bottom: 7px solid #212121;
+  }
+  /* Middle
+  -----------------------------------------------------------------------------*/
+  .content {
+    padding: 0 0 250px;
+  }
+  .promo-block {
+    background: #121212;
+    height: auto;
+    padding-bottom: 85px;
+  }
+  .promo-block .content-inner {
+    background: none;
+    height: auto;
+    position: relative;
+  }
+  .promo-block .desc {
+    text-align: center;
+    color: #fff;
+    position: relative;
+    top: 40px;
+    width: 700px;
+    margin: 0 auto;
+    right: 0;
+  }
+  .desc h3 {
+    font: 68px/72px CalibriBold;
+    /* margin-bottom: 35px; */
+    width: 610px;
+    margin: 0 auto 26px;
+  }
+  .promo-menu {
+    text-align: center;
     margin-top: 28px;
   }
-}
-
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  .container {
-    max-width: 730px;
+  .promo-menu li{
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 30px;
   }
+  .promo-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 50px;
+    margin-top: 17px;
+    display: inline-block;
+  }
+  .promo-menu a.box-l {
+    text-decoration: none;
+    font-size: 16px;
+    text-align: center;
+    color: #fff;
+    display: block;
+    width: 280px;
+    margin: 0 auto;
+  }
+  .desc>p {
+    font-size: 44px;
+    width: 475px;
+    margin: 0 auto;
+    line-height: 48px;
+  }
+  .blue-box {
+    font-size: 182px;
+    width: 280px;
+    height: 280px;
+    border-radius: 15px;
+  }
+  .blue-box i {
+    line-height: 280px;
+  }
+  .three-apps-block {
+    padding: 20px 0;
+    background: #101010;
+    overflow: hidden;
+    display: none;
+  }
+  .app-item {
+    width: 100%;
+    margin-right: 0;
+    overflow: hidden;
+    display: block;
+    /* vertical-align: top; */
+    height: auto;
+    position: relative;
+  }
+  .three-apps-block .app-item:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+    height: 15px;
+    box-shadow: inset 0px -25px 15px -12px #101010;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  .app-item .left_ {
+    float: left;
+    width: 210px;
+    height: 210px;
+    margin-right: 40px;
+  }
+  .app-item .left_ img {
+    width: 210px;
+    height: 210px;
+  }
+  .app-item .left img {
+    border-radius: 10px;
+  }
+  .app-item .right_ {
+    /* float: left; */
+    /* color: #ccc; */
+    width: 600px;
+  }
+  .app-item .name {
+    font: 40px/45px CalibriBold;
+    margin-bottom: 0px;
+    /* text-decoration: underline; */
+  }
+  .app-item .genre {
+    font: 26px/30px CalibriBold;
+    margin-bottom: 4px;
+  }
+  .genre i {
+    margin-left: 2px;
+    font-size: .9em;
+    position: relative;
+    top: 1px;
+  }
+  .app-item .description {
+    font-size: 24px;
+    line-height: 28px;
+  }
+  .apps-list {
+    margin-top: 0;
+    background: #1e1e1e;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  .apps-list .content-inner {
+    width: 895px;
+    margin: 0 auto;
+  }
+  h1.page-title {
+    font: 66px/72px CalibriBold;
+    color: #fff;
+    /* text-shadow: 0 1px 1px rgba(0,0,0,.7); */
+    margin-bottom: 26px;
 
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
+  }
+  .apps-list .app-item {
+    margin-bottom: 40px;
+    padding: 15px;
+    /* background: #ccc; */
+  }
+  .apps-list .app-item .name,
+  .apps-list .app-item .genre {
+    color: #fff;
+  }
+  .apps-list .app-item .genre i {
+    opacity: .8;
+  }
+  .app {
+    overflow: hidden;
+    padding: 30px 0;
+    margin: 0 auto;
+    width: 895px;
+  }
+  .app .left_ {
+    float: left;
+    width: 290px;
+    margin-right: 20px;
+    height: 290px;
+  }
+  .app .left_ img {
+    width: 290px;
+    height: 290px;
+  }
+  .app .right_ {
+    float: left;
+  }
+  .app .right_ .name {
+    font: 700 62px/68px Calibri;
+    color: #fff;
+    text-shadow: 0 1px 1px rgba(0,0,0,.7);
+  }
+  .app .right_ .genre {
+    font-size: 24px;
+    font-weight: 500;
+  }
+  .app .right_ .params {
+    /* overflow: hidden; */
+    /* margin-top: 10px; */
+    font-size: 22px;
+    /* font-weight: 700; */
+    /* color: #ccc; */
+  }
+  .apps-head {
+    background: #1e1e1e;
+  }
+  .app .right_ .params>div {
+    float: none;
+    margin-right: 20px;
+  }
+  .app .right_ .params .title {
+    font-weight: 400;
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+  .btn-android {
+    margin-top: 10px;
+    display: inline-block;
+    width: 138px;
+    height: 41px;
+    background: url(../images/buttons.png) no-repeat 0 0;
+  }
+  .btn-ios {
+    margin-top: 10px;
+    display: inline-block;
+    width: 137px;
+    height: 41px;
+    background: url(../images/buttons.png) no-repeat -140px 0;
+  }
+  .slider {
+    padding: 20px 0;
+    background: #dbdbdb;
+  }
+  .slider-box {
+    width: 895px;
+    margin: 0 auto;
+  }
+  .app-descripton {
+    /* padding: 30px 0; */
+    /* background: #f8f8f8; */
+    /* color: #434343; */
+    font-size: 24px;
+    line-height: 28px;
+  }
+  .app-descripton .content-inner {
+    width: 895px;
+    margin: 0 auto;
+  }
+  .app-descripton h2 {
+    font: 700 44px/48px Calibri;
+    /* margin-bottom: 15px; */
+  }
+  .app-descripton p {
+    margin-bottom: 8px;
+  }
+  .app-descripton ul+h4,
+  .app-descripton p+h4 {
+    /* margin-top: 20px; */
+  }
+  .app-descripton h4 {
+    /* color: #005ea5; */
+    font-size: 32px;
+    /* font-weight: 700; */
+    /* margin-bottom: 10px; */
+  }
+  .app-descripton ul {
+    /* list-style-type: disc; */
+    margin-left: 30px;
+  }
+  .app-descripton ol {
+    /* list-style-type: decimal; */
+    margin-left: 35px;
+  }
+  .app-descripton li {
+    margin-bottom: 3px;
+    color: #005ea5;
+  }
+  .app-descripton li span {
+    color: #434343;
+  }
+  .more-btn-box {
+    text-align: center;
+  }
+  .more-btn {
+    display: inline-block;
+    cursor: pointer;
+    color: #fff;
+    font: 700 30px/76px Calibri;
+    padding: 0 50px;
+    border-radius: 8px;
+    background: #232121; /* Old browsers */
+    background: -moz-linear-gradient(top,  #232121 0%, #010101 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#232121), color-stop(100%,#010101)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #232121 0%,#010101 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #232121 0%,#010101 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #232121 0%,#010101 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #222020 0%,#010101 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#232121', endColorstr='#010101',GradientType=0 ); /* IE6-9 */
+  }
+  .more-btn:hover {
+    background: #1c1a1a; /* Old browsers */
+    background: -moz-linear-gradient(top,  #1c1a1a 0%, #000000 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#1c1a1a), color-stop(100%,#000000)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #1c1a1a 0%,#000000 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #1c1a1a 0%,#000000 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #1c1a1a 0%,#000000 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #1c1a1a 0%,#000000 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c1a1a', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+  }
+  /* Footer
+  -----------------------------------------------------------------------------*/
   .footer {
-    padding-left: 0;
-    padding-right: 0;
+    padding: 0 10px;
+    width: 940px;
+    margin: -250px auto 0;
+    height: 220px;
+    color: #9b9999;
+    position: relative;
+    padding-top: 30px;
   }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
+  .footer h6 {
+    /* float: left; */
+    font: 28px/32px CalibriBold;
+    margin-bottom: 10px;
   }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
+  .footer p {
+    margin-bottom: 8px;
+    font: 300 13px/16px Calibri;
+  }
+  .about-us-block {
+    width: 600px;
+    float: left;
+    padding-right: 10px;
+    margin-right: 22px;
+    position: relative;
+    display: none;
+  }
+  .about-us-block:after {
+    content: '';
+    display: inline-block;
+    width: 1px;
+    height: 70px;
+    background: #1e1e1e;
+    position: absolute;
+    top: 32px;
+    right: 0px;
+  }
+  .copyright {
+    color: #5a5a5a;
+  }
+  .footer .first-item {
+    width: 150px;
+  }
+  .footer .contacts-block {
+    width: 100%;
+    float: none;
+  }
+  .contact-item {
+    overflow: hidden;
+    float: left;
+  }
+  .contact-item p {
+    float: left;
+    font-weight: 600;
+    font-size: 22px;
+    width: 251px;
+    line-height: 26px;
+  }
+  .contact-item .ct {
+    font: 26px/32px CalibriRegular;
+    float: none;
+    width: auto;
+    color: #EAE4E4;
+  }
+  .footer .company-name {
+    font-size: 26px;
   }
 }

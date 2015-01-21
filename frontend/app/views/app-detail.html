@@ -1,0 +1,48 @@
+<div class="apps-head">
+    <div class="content-inner">
+        <div class="app">
+            <div class="left_">
+                <img ng-src="{{ application.image.realUri }}">
+            </div>
+            <div class="right_">
+                <h1 class="name">{{ application.title }}</h1>
+                <p class="genre">{{ application.genre }}
+                    <i ng-show="{{ application.isIOS }}" class="fa fa-apple"></i>
+                    <i ng-show="{{ application.isAndroid }}" class="fa fa-android"></i>
+                    <i ng-show="{{ application.isWinPhone }}" class="fa fa-windows"></i>
+                </p>
+                <div class="params">
+                    <div>
+                        <p class="title">Требуемая версия Android</p>
+                        <p>2.3 или более поздняя</p>
+                        <a href="" class="btn-android"></a>
+                    </div>
+                    <div>
+                        <p class="title">Требуемая версия iOS</p>
+                        <p>7.1</p>
+                        <a href="" class="btn-ios"></a>
+                    </div>
+                    <div>
+                        <p class="title">Размер</p>
+                        <p>14М</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="slider">
+    <div class="content-inner">
+        <slick infinite="true" speed="300" slides-to-show="1" center-mode="true" variable-width="true" prev-arrow='<i class="fa fa-apple"></i>'>
+            <div ng-repeat="image in application.sliderImages" class="slider-box">
+                <img ng-src="{{ image.realUri }}" style="width: 200px;">
+            </div>
+        </slick>
+    </div>
+</div>
+<div class="app-descripton">
+    <div class="content-inner">
+        <h2>Описание</h2>
+        {{ application.description }}
+    </div>
+</div>

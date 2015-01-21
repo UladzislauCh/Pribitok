@@ -1,0 +1,24 @@
+<div class="apps-list">
+    <div class="content-inner">
+        <div ng-repeat="application in applications | limitTo: limit" class="app-item">
+            <a href="/app/{{ application.id }}" class="app-item">
+                <div class="left_">
+                    <img ng-src="{{ application.image.realUri }}">
+                </div>
+                <div class="right_">
+                    <p class="name">{{ application.title }}</p>
+                    <p class="genre">{{ application.title }}
+                        <i ng-show="{{ application.isIOS }}" class="fa fa-apple"></i>
+                        <i ng-show="{{ application.isAndroid }}" class="fa fa-android"></i>
+                        <i ng-show="{{ application.isWinPhone }}" class="fa fa-windows"></i>
+                    </p>
+                    <p class="description">{{ application.description }}</p>
+                </div>
+            </a>
+        </div>
+        <div class="more-btn-box">
+            <span class="more-btn" ng-click="showMore()" ng-show="count > limit">{{ staticData.apps.button }}</span>
+        </div>
+    </div>
+</div>
+

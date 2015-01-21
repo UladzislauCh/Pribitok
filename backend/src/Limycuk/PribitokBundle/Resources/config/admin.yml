@@ -9,3 +9,14 @@ services:
             - ~
         calls:
             - [ setTranslationDomain, [LimycukArtGalleryBundle]]
+
+    sonata.admin.application:
+        class: Limycuk\PribitokBundle\Admin\ApplicationAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Data", label: "Application" }
+        arguments:
+            - ~
+            - Limycuk\PribitokBundle\Entity\Application
+            - ~
+        calls:
+            - [ setTranslationDomain, [LimycukPribitokBundle]]

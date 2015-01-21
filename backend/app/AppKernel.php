@@ -26,8 +26,8 @@ class AppKernel extends Kernel
             new Sonata\IntlBundle\SonataIntlBundle(),
             new Sonata\MediaBundle\SonataMediaBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle(),
-            new Limycuk\PribitokBundle\LimycukPribitokBundle(),
             new Limycuk\UserBundle\LimycukUserBundle(),
+            new Limycuk\PribitokBundle\LimycukPribitokBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

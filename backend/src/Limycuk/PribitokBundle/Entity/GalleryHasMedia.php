@@ -31,6 +31,12 @@ class GalleryHasMedia extends BaseGalleryHasMedia {
      **/
     protected $media;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Application", inversedBy="sliderImages", cascade={"persist"})
+     * @ORM\JoinColumn(name="applicationId", referencedColumnName="id", nullable=true)
+     **/
+    protected $application;
+
     public function setGallery(\Sonata\MediaBundle\Model\GalleryInterface $gallery = null)
     {
         $this->gallery = $gallery;
@@ -74,5 +80,28 @@ class GalleryHasMedia extends BaseGalleryHasMedia {
     public function getMedia()
     {
         return $this->media;
+    }
+
+    /**
+     * Set application
+     *
+     * @param \Limycuk\PribitokBundle\Entity\Application $application
+     * @return GalleryHasMedia
+     */
+    public function setApplication(\Limycuk\PribitokBundle\Entity\Application $application = null)
+    {
+        $this->application = $application;
+
+        return $this;
+    }
+
+    /**
+     * Get application
+     *
+     * @return \Limycuk\PribitokBundle\Entity\Application 
+     */
+    public function getApplication()
+    {
+        return $this->application;
     }
 }

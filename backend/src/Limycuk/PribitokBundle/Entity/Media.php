@@ -34,6 +34,11 @@ class Media extends BaseMedia {
     protected $languageJson;
 
     /**
+     * @ORM\OneToMany(targetEntity="Application", mappedBy="image", cascade={"persist", "remove"})
+     */
+    protected $applicationImages;
+
+    /**
      * Constructor
      */
     public function __construct()
@@ -143,5 +148,38 @@ class Media extends BaseMedia {
     public function getLanguageJson()
     {
         return $this->languageJson;
+    }
+
+    /**
+     * Add applicationImages
+     *
+     * @param \Limycuk\PribitokBundle\Entity\Application $applicationImages
+     * @return Media
+     */
+    public function addApplicationImage(\Limycuk\PribitokBundle\Entity\Application $applicationImages)
+    {
+        $this->applicationImages[] = $applicationImages;
+
+        return $this;
+    }
+
+    /**
+     * Remove applicationImages
+     *
+     * @param \Limycuk\PribitokBundle\Entity\Application $applicationImages
+     */
+    public function removeApplicationImage(\Limycuk\PribitokBundle\Entity\Application $applicationImages)
+    {
+        $this->applicationImages->removeElement($applicationImages);
+    }
+
+    /**
+     * Get applicationImages
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getApplicationImages()
+    {
+        return $this->applicationImages;
     }
 }

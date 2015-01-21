@@ -1,24 +1,39 @@
-<div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
+<!--<h1>{{ staticData.mainPage.title }}</h1>
+<h3>{{ staticData.mainPage.subtitle }}</h3>
+<ul>
+    <li ng-repeat="record in staticData.mainPage.menu"><i class="fa {{ record.awesomeIcon }}"></i>{{ record.title }}</li>
+</ul>-->
+<div class="promo-block line-b_">
+    <div class="content-inner">
+        <div class="desc">
+            <h3>{{ staticData.mainPage.title }}</h3>
+            <p>{{ staticData.mainPage.subtitle }}</p>
+            <ul class="promo-menu">
+                <li ng-repeat="item in staticData.mainPage.menu">
+                    <a href="" class="box-l">
+                        <div class="blue-box"><i class="fa {{ item.awesomeIcon }}"></i></div>
+                    </a>
+                    <a href="">{{ staticData.mainPage.menu.title }}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
 </div>
-
-<div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
-
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
-
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
+<div class="three-apps-block line-b_">
+    <div class="content-inner">
+        <a ng-repeat="app in applications | limitTo:3 | filter:{forMainPage: true}" href="" class="app-item">
+            <div class="left_">
+                <img ng-src="{{ app.realUri }}">
+            </div>
+            <div class="right_">
+                <p class="name">{{ app.title }}</p>
+                <p class="genre">{{ app.genre }}
+                    <i ng-show="{{ app.isWinPhone }}" class="fa fa-windows"></i>
+                    <i ng-show="{{ app.isAndroid }}" class="fa fa-android"></i>
+                    <i ng-show="{{ app.isIOS }}" class="fa fa-apple"></i>
+                </p>
+                <p class="description">{{ app.description }}</p>
+            </div>
+        </a>
+    </div>
 </div>
-<h2>{{ 'HEADLINE' | translate }}</h2>

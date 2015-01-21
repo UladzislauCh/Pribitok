@@ -1,3 +1,17 @@
-limycuk_pribitok_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: LimycukPribitokBundle:Default:index }
+limycuk_pribitok_languages:
+    path:     /languages
+    defaults: { _controller: LimycukPribitokBundle:Language:languages }
+
+limycuk_pribitok_language_detail:
+    path:     /language/{title}
+    defaults: { _controller: LimycukPribitokBundle:Language:language }
+
+limycuk_pribitok_applications:
+    path:     /applications/{lang}
+    defaults: { _controller: LimycukPribitokBundle:Application:applications }
+
+limycuk_pribitok_application:
+    path:     /application/{id}
+    defaults: { _controller: LimycukPribitokBundle:Application:application }
+    requirements:
+        id:  \d+

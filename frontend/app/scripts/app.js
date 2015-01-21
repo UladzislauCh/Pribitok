@@ -16,35 +16,32 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'pascalprecht.translate'
+    'slick'
   ]).config(configure);
 
-configure.$inject = ['$routeProvider', '$locationProvider', '$translateProvider'];
+configure.$inject = ['$routeProvider', '$locationProvider'];
 
-function configure($routeProvider, $locationProvider, $translateProvider) {
+function configure($routeProvider, $locationProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
+      .when('/apps', {
+        templateUrl: 'views/apps.html',
+        controller: 'AppsCtrl'
+      })
+      .when('/app/:id', {
+        templateUrl: 'views/app-detail.html',
+        controller: 'AppDetailCtrl',
+        resolve: AppDetailCtrl.resolve
+      })
+      .when('/contact', {
+        templateUrl: 'views/contact.html'
       })
       .otherwise({
         redirectTo: '/'
       });
 
     $locationProvider.html5Mode(true);
-
-    $translateProvider
-        .translations('en', {
-            HEADLINE: 'Hello there, This is my awesome app!',
-            INTRO_TEXT: 'And it has i18n support!'
-        })
-        .translations('de', {
-            HEADLINE: 'Hey, das ist meine großartige App!',
-            INTRO_TEXT: 'Und sie untersützt mehrere Sprachen!'
-        });
-    $translateProvider.preferredLanguage('en');
 }
