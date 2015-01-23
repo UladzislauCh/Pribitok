@@ -1,0 +1,48 @@
+<project name="Pribitok Website" default="deploy" basedir=".">
+
+    <property file="build.properties" />
+    <property file="${platform}/build.properties" />
+    <property environment="env" />
+
+    <target name="deploy">
+
+    	<echo message="Updating source code..."/>
+    	<exec executable="rsync" dir="${paths.root}">
+    		<arg line="-ruv --exclude-from=build/rsync.exclude --delete . ${server.username}@${server.host}:${paths.target}"/>
+    	</exec>
+
+        <echo message="Copying configuration files..."/>
+        <exec executable="scp" dir="${paths.root}build/${platform}/src">
+            <arg line="-r . ${server.username}@${server.host}:${paths.target}"/>
+        </exec>
+
+        <echo message="Update database structure..."/>
+        <exec executable="ssh">
+            <arg line="${server.username}@${server.host} php ${paths.target}/backend/app/console doctrine:schema:update --force"/>
+        </exec>
+
+        <echo message="Clearing cache..."/>
+        <exec executable="ssh">
+            <arg line="${server.username}@${server.host} php ${paths.target}/backend/app/console cache:clear --env=prod"/>
+        </exec>
+
+    	<echo message="Changing file permission..."/>
+        <exec executable="ssh">
+            <arg line="${server.username}@${server.host} chmod -R 777 ${paths.target}/frontend/.tmp"/>
+        </exec>
+        <exec executable="ssh">
+            <arg line="${server.username}@${server.host} chmod -R 777 ${paths.target}/frontend/.sass-cache"/>
+        </exec>
+        <exec executable="ssh">
+            <arg line="${server.username}@${server.host} chown -R www-data:www-data ${paths.target}../"/>
+        </exec>
+
+    	<echo message="Updating nginx configuration files..."/>
+    	<exec executable="scp">
+    		<arg line="-r ${paths.root}build/${platform}/nginx/${platform}.conf ${server.username}@${server.host}:${paths.nginx.hosts}/${platform}.conf "/>
+    	</exec>
+    	<exec executable="ssh">
+    		<arg line="${server.username}@${server.host} sudo service nginx reload"/>
+    	</exec>
+    </target>
+</project>

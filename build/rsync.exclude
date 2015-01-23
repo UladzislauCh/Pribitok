@@ -1,0 +1,6 @@
+.git
+backend/app/cache
+backend/app/logs
+backend/web/bundles
+frontend/.tmp
+frontend/.sass-cache
