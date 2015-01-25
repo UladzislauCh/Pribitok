@@ -42,7 +42,7 @@
     		<arg line="-r ${paths.root}build/${platform}/nginx/${platform}.conf ${server.username}@${server.host}:${paths.nginx.hosts}/${platform}.conf "/>
     	</exec>
     	<exec executable="ssh">
-    		<arg line="${server.username}@${server.host} sudo service nginx reload"/>
+    		<arg line="${server.username}@${server.host} service nginx reload"/>
     	</exec>
     </target>
 </project>
