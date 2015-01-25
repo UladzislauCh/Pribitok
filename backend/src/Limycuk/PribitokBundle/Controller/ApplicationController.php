@@ -10,7 +10,7 @@ class ApplicationController extends Controller
     public function applicationsAction($lang = "en")
     {
         $language = $this->getDoctrine()->getRepository('LimycukPribitokBundle:Language')->findByTitle($lang);
-        if(!$language) return new JsonResponse(null);
+        if(!$language) return new JsonResponse([]);
         $foundApplications = $language[0]->getApplications();
 
         $applications = array();
