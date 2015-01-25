@@ -16,7 +16,6 @@ function MainCtrl($scope, applicationResource) {
 
     applicationResource.query({lang: $scope.language.title}).$promise.then(function (result) {
         $scope.applications = result;
-        console.log(result);
     })
 
 }

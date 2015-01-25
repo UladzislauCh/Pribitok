@@ -13,7 +13,7 @@
                     <a href="" class="box-l">
                         <div class="blue-box"><i class="fa {{ item.awesomeIcon }}"></i></div>
                     </a>
-                    <a href="">{{ staticData.mainPage.menu.title }}</a>
+                    <a href="">{{ item.title }}</a>
                 </li>
             </ul>
         </div>
@@ -21,7 +21,7 @@
 </div>
 <div class="three-apps-block line-b_">
     <div class="content-inner">
-        <a ng-repeat="app in applications | limitTo:3 | filter:{forMainPage: true}" href="" class="app-item">
+        <a ng-repeat="app in applications | limitTo:3 | filter:{forMainPage: true}" href="/app/{{ app.id }}" class="app-item">
             <div class="left_">
                 <img ng-src="{{ app.realUri }}">
             </div>
@@ -32,7 +32,7 @@
                     <i ng-show="{{ app.isAndroid }}" class="fa fa-android"></i>
                     <i ng-show="{{ app.isIOS }}" class="fa fa-apple"></i>
                 </p>
-                <p class="description">{{ app.description }}</p>
+                <p class="description">{{ app.description | limitTo: 100 }}</p>
             </div>
         </a>
     </div>
