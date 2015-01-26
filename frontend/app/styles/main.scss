@@ -1,25 +1,4 @@
 $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
-// endbower
-@font-face {
-  font-family: 'CalibriRegular';
-  src: url('../fonts/Calibri.eot');
-  src: url('../fonts/Calibri.eot?#iefix') format('embedded-opentype'),
-  url('../fonts/Calibri.woff') format('woff'),
-  url('../fonts/calibri.ttf') format('truetype'),
-  url('../fonts/Calibri.svg#CalibriRegular') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'CalibriBold';
-  src: url('../fonts/calibrib.eot');
-  src: url('../fonts/calibrib.eot?#iefix') format('embedded-opentype'),
-  url('../fonts/calibrib.woff') format('woff'),
-  url('../fonts/calibrib.ttf') format('truetype'),
-  url('../fonts/calibrib.svg#CalibriBold') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
 /* Eric Meyer's CSS Reset */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -35,6 +14,7 @@ figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
   margin: 0;
+
   padding: 0;
   border: 0;
   font-size: 100%;
@@ -73,13 +53,15 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
   display: block;
 }
 body {
-  font: 12px/18px CalibriRegular, Arial, sans-serif;
+  font: 12px/18px 'Open Sans', Arial, sans-serif;
   width: 100%;
   height: 100%;
   background: url(../images/bg_body.jpg) no-repeat center top #010101;
   color: #fff;
 }
-
+.ng-scope {
+  height: 100%;
+}
 .wrapper {
   min-width: 960px;
   max-width: 1920px;
@@ -87,6 +69,7 @@ body {
   min-height: 100%;
   height: auto !important;
   height: 100%;
+  opacity: 1;
 }
 
 .content-inner {
@@ -119,19 +102,13 @@ body {
   background: url(../images/home_glava_bg_rob.jpg) no-repeat center;
 }
 .header .content-inner {
-  /* overflow: hidden; */
   position: relative;
 }
 .logo {
-  /* display: inline-block; */
-  /* vertical-align: bottom; */
-  /* text-decoration: none; */
   float: left;
 }
 nav {
   overflow: hidden;
-  /* display: inline-block; */
-  /* vertical-align: bottom; */
   margin: 14px 90px 7px 0px;
   float: right;
 }
@@ -142,7 +119,7 @@ nav li {
 nav li a {
   color: #fff;
   text-decoration: none;
-  font: 24px/24px CalibriBold;
+  font: 700 24px/24px 'Open Sans';
   text-transform: uppercase;
 }
 nav li.select a,
@@ -213,7 +190,7 @@ nav li a:hover {
   right: 62px;
 }
 .desc h3 {
-  font: 30px/34px CalibriBold;
+  font: 700 30px/34px 'Open Sans';
   margin-bottom: 10px;
 }
 .promo-menu {
@@ -228,7 +205,9 @@ nav li a:hover {
 .promo-menu a {
   color: #fff;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 14px;
+  margin-top: 3px;
+  display: inline-block;
 }
 .promo-menu a.box-l {
   text-decoration: none;
@@ -288,16 +267,6 @@ nav li a:hover {
   height: 100px;
   position: relative;
 }
-.three-apps-block .app-item:after {
-  content: '';
-  display: inline-block;
-  width: 100%;
-  height: 15px;
-  box-shadow: inset 0px -25px 15px -12px #101010;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
 .app-item .left_ {
   float: left;
   width: 80px;
@@ -317,7 +286,7 @@ nav li a:hover {
   width: 210px;
 }
 .app-item .name {
-  font: 18px/15px CalibriBold;
+  font: 700 18px/15px 'Open Sans';
   margin-bottom: 4px;
   text-decoration: underline;
 }
@@ -326,7 +295,7 @@ nav li a:hover {
   text-decoration: none;
 }
 .app-item .genre {
-  font: 14px/16px CalibriBold;
+  font: 600 14px/16px 'Open Sans';
   margin-bottom: 4px;
 }
 .genre i {
@@ -343,7 +312,7 @@ nav li a:hover {
   margin-top: 30px;
 }
 h1.page-title {
-  font: 28px/32px CalibriBold;
+  font: 700 28px/32px 'Open Sans';
   color: #fff;
   text-shadow: 0 1px 1px rgba(0,0,0,.7);
   margin-bottom: 20px;
@@ -362,6 +331,7 @@ h1.page-title {
 .app {
   overflow: hidden;
   margin-top: 30px;
+  padding-bottom: 30px;
 }
 .app .left_ {
   float: left;
@@ -372,7 +342,8 @@ h1.page-title {
   float: left;
 }
 .app .right_ .name {
-  font: 34px/38px CalibriBold;
+  font: 700 34px/38px 'Open Sans';
+  margin-bottom: 5px;
   color: #fff;
   text-shadow: 0 1px 1px rgba(0,0,0,.7);
 }
@@ -394,6 +365,7 @@ h1.page-title {
 .app .right_ .params .title {
   font-weight: 400;
   font-size: 15px;
+  margin-bottom: 4px;
 }
 .btn-android {
   margin-top: 10px;
@@ -408,6 +380,10 @@ h1.page-title {
   width: 137px;
   height: 41px;
   background: url(../images/buttons.png) no-repeat -140px 0;
+}
+.app .size {
+  font-weight: 300;
+  font-size: 14px;
 }
 .slider {
   padding: 20px 0;
@@ -427,7 +403,7 @@ h1.page-title {
   line-height: 18px;
 }
 .app-descripton h2 {
-  font: 24px/28px CalibriBold;
+  font: 700 24px/28px 'Open Sans';
   margin-bottom: 15px;
 }
 .app-descripton p {
@@ -470,12 +446,12 @@ h1.page-title {
   padding-top: 30px;
 }
 .footer h6 {
-  font: 15px/18px CalibriBold;
+  font: 700 15px/18px 'Open Sans';
   margin-bottom: 10px;
 }
 .footer p {
   margin-bottom: 8px;
-  font: 300 13px/16px Calibri;
+  font: 400 13px/16px 'Open Sans';
 }
 .about-us-block {
   width: 600px;
@@ -512,19 +488,19 @@ h1.page-title {
   width: 138px;
 }
 .contact-item .ct {
-  font: 300 13px/16px Calibri;
+  font: 400 13px/16px 'Open Sans';
   float: left;
   width: 70px;
 }
 .footer .company-name {
-  font-family: CalibriBold;
+  font-family: 'Open Sans';
   font-size: 16px;
+  font-weight: 700;
 }
-@media only screen and (max-device-width: 1100px) {
+@media screen and (max-width: 768px) {
   .wrapper {
-    min-width: 960px;
+    min-width: 980px;
     max-width: 1920px;
-    /* padding: 0 10px; */
     margin: 0 auto;
     min-height: 100%;
     height: auto !important;
@@ -579,7 +555,7 @@ h1.page-title {
   nav li a {
     color: #fff;
     text-decoration: none;
-    font: 42px/48px CalibriBold;
+    font: 700 42px/48px 'Open Sans';
     text-transform: uppercase;
   }
 
@@ -649,7 +625,7 @@ h1.page-title {
     right: 0;
   }
   .desc h3 {
-    font: 68px/72px CalibriBold;
+    font: 700 68px/72px 'Open Sans';
     /* margin-bottom: 35px; */
     width: 610px;
     margin: 0 auto 26px;
@@ -709,16 +685,6 @@ h1.page-title {
     height: auto;
     position: relative;
   }
-  .three-apps-block .app-item:after {
-    content: '';
-    display: inline-block;
-    width: 100%;
-    height: 15px;
-    box-shadow: inset 0px -25px 15px -12px #101010;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-  }
   .app-item .left_ {
     float: left;
     width: 210px;
@@ -738,12 +704,12 @@ h1.page-title {
     width: 600px;
   }
   .app-item .name {
-    font: 40px/45px CalibriBold;
+    font: 700 40px/45px 'Open Sans';
     margin-bottom: 0px;
     /* text-decoration: underline; */
   }
   .app-item .genre {
-    font: 26px/30px CalibriBold;
+    font: 700 26px/30px 'Open Sans';
     margin-bottom: 4px;
   }
   .genre i {
@@ -767,7 +733,7 @@ h1.page-title {
     margin: 0 auto;
   }
   h1.page-title {
-    font: 66px/72px CalibriBold;
+    font: 700 66px/72px 'Open Sans';
     color: #fff;
     /* text-shadow: 0 1px 1px rgba(0,0,0,.7); */
     margin-bottom: 26px;
@@ -805,7 +771,7 @@ h1.page-title {
     float: left;
   }
   .app .right_ .name {
-    font: 700 62px/68px Calibri;
+    font: 700 62px/68px 'Open Sans';
     color: #fff;
     text-shadow: 0 1px 1px rgba(0,0,0,.7);
   }
@@ -866,7 +832,7 @@ h1.page-title {
     margin: 0 auto;
   }
   .app-descripton h2 {
-    font: 700 44px/48px Calibri;
+    font: 700 44px/48px 'Open Sans';
     /* margin-bottom: 15px; */
   }
   .app-descripton p {
@@ -904,7 +870,7 @@ h1.page-title {
     display: inline-block;
     cursor: pointer;
     color: #fff;
-    font: 700 30px/76px Calibri;
+    font: 700 30px/76px 'Open Sans';
     padding: 0 50px;
     border-radius: 8px;
     background: #232121; /* Old browsers */
@@ -939,12 +905,12 @@ h1.page-title {
   }
   .footer h6 {
     /* float: left; */
-    font: 28px/32px CalibriBold;
+    font: 700 28px/32px 'Open Sans';
     margin-bottom: 10px;
   }
   .footer p {
     margin-bottom: 8px;
-    font: 300 13px/16px Calibri;
+    font: 400 13px/16px 'Open Sans';
   }
   .about-us-block {
     width: 600px;
@@ -986,7 +952,7 @@ h1.page-title {
     line-height: 26px;
   }
   .contact-item .ct {
-    font: 26px/32px CalibriRegular;
+    font: 700 26px/32px 'Open Sans';
     float: none;
     width: auto;
     color: #EAE4E4;

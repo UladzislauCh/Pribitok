@@ -1,19 +1,4 @@
-@font-face {
-  font-family: 'CalibriRegular';
-  src: url("../fonts/Calibri.eot");
-  src: url("../fonts/Calibri.eot?#iefix") format("embedded-opentype"), url("../fonts/Calibri.woff") format("woff"), url("../fonts/calibri.ttf") format("truetype"), url("../fonts/Calibri.svg#CalibriRegular") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'CalibriBold';
-  src: url("../fonts/calibrib.eot");
-  src: url("../fonts/calibrib.eot?#iefix") format("embedded-opentype"), url("../fonts/calibrib.woff") format("woff"), url("../fonts/calibrib.ttf") format("truetype"), url("../fonts/calibrib.svg#CalibriBold") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
 /* Eric Meyer's CSS Reset */
-/* line 24, main.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -32,65 +17,48 @@ time, mark, audio, video {
   border: 0;
   font-size: 100%;
   font: inherit;
-  vertical-align: baseline;
-}
+  vertical-align: baseline; }
 
 /* HTML5 display-role reset for older browsers */
-/* line 45, main.scss */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
-  display: block;
-}
+  display: block; }
 
-/* line 49, main.scss */
 body {
-  line-height: 1;
-}
+  line-height: 1; }
 
-/* line 52, main.scss */
 ol, ul {
-  list-style: none;
-}
+  list-style: none; }
 
-/* line 55, main.scss */
 blockquote, q {
-  quotes: none;
-}
+  quotes: none; }
 
-/* line 58, main.scss */
 blockquote:before, blockquote:after,
 q:before, q:after {
   content: '';
-  content: none;
-}
+  content: none; }
 
-/* line 63, main.scss */
 table {
   border-collapse: collapse;
-  border-spacing: 0;
-}
+  border-spacing: 0; }
 
 /* End of Eric Meyer's CSS Reset */
-/* line 69, main.scss */
 html {
-  height: 100%;
-}
+  height: 100%; }
 
-/* line 72, main.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
-  display: block;
-}
+  display: block; }
 
-/* line 75, main.scss */
 body {
-  font: 12px/18px CalibriRegular, Arial, sans-serif;
+  font: 12px/18px 'Open Sans', Arial, sans-serif;
   width: 100%;
   height: 100%;
   background: url(../images/bg_body.jpg) no-repeat center top #010101;
-  color: #fff;
-}
+  color: #fff; }
 
-/* line 83, main.scss */
+.ng-scope {
+  height: 100%; }
+
 .wrapper {
   min-width: 960px;
   max-width: 1920px;
@@ -98,18 +66,15 @@ body {
   min-height: 100%;
   height: auto !important;
   height: 100%;
-}
+  opacity: 1; }
 
-/* line 92, main.scss */
 .content-inner {
   padding: 0 10px;
   width: 960px;
-  margin: 0 auto;
-}
+  margin: 0 auto; }
 
 /* Header
 -----------------------------------------------------------------------------*/
-/* line 100, main.scss */
 .header {
   height: 90px;
   background: url(../images/menu_glava_bg.jpg) no-repeat center;
@@ -117,15 +82,11 @@ body {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  padding-top: 25px;
-}
+  padding-top: 25px; }
 
-/* line 109, main.scss */
 .line-b_ {
-  position: relative;
-}
+  position: relative; }
 
-/* line 112, main.scss */
 .line-b_:after {
   content: '';
   display: block;
@@ -133,53 +94,33 @@ body {
   height: 1px;
   position: absolute;
   bottom: 0px;
-  background: url(../images/home_glava_bg_rob.jpg) no-repeat center;
-}
+  background: url(../images/home_glava_bg_rob.jpg) no-repeat center; }
 
-/* line 121, main.scss */
 .header .content-inner {
-  /* overflow: hidden; */
-  position: relative;
-}
+  position: relative; }
 
-/* line 125, main.scss */
 .logo {
-  /* display: inline-block; */
-  /* vertical-align: bottom; */
-  /* text-decoration: none; */
-  float: left;
-}
+  float: left; }
 
-/* line 131, main.scss */
 nav {
   overflow: hidden;
-  /* display: inline-block; */
-  /* vertical-align: bottom; */
   margin: 14px 90px 7px 0px;
-  float: right;
-}
+  float: right; }
 
-/* line 138, main.scss */
 nav li {
   float: left;
-  margin-left: 20px;
-}
+  margin-left: 20px; }
 
-/* line 142, main.scss */
 nav li a {
   color: #fff;
   text-decoration: none;
-  font: 24px/24px CalibriBold;
-  text-transform: uppercase;
-}
+  font: 700 24px/24px 'Open Sans';
+  text-transform: uppercase; }
 
-/* line 148, main.scss */
 nav li.select a,
 nav li a:hover {
-  text-decoration: underline;
-}
+  text-decoration: underline; }
 
-/* line 152, main.scss */
 .select-lang {
   text-align: center;
   width: 24px;
@@ -187,42 +128,30 @@ nav li a:hover {
   top: -6px;
   font-size: 14px;
   color: #9b9999;
-  right: 0;
-}
+  right: 0; }
 
-/* line 161, main.scss */
 .select-lang span {
   cursor: pointer;
-  display: inline-block;
-}
+  display: inline-block; }
 
-/* line 165, main.scss */
 .select-lang > div span {
-  border-bottom: 1px dotted #9b9999;
-}
+  border-bottom: 1px dotted #9b9999; }
 
-/* line 168, main.scss */
 .select-lang > div span:hover {
   border-color: #fff;
-  color: #fff;
-}
+  color: #fff; }
 
-/* line 172, main.scss */
 .select-lang span:hover,
 .select-lang .select span {
-  color: #fff;
-}
+  color: #fff; }
 
-/* line 176, main.scss */
 .select-lang ul {
   margin-top: 7px;
   padding: 3px 0;
   background: #212121;
   position: relative;
-  z-index: 10;
-}
+  z-index: 10; }
 
-/* line 183, main.scss */
 .select-lang ul:after {
   content: '';
   position: absolute;
@@ -231,66 +160,50 @@ nav li a:hover {
   margin-left: -5px;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-  border-bottom: 7px solid #212121;
-}
+  border-bottom: 7px solid #212121; }
 
 /* Middle
 -----------------------------------------------------------------------------*/
-/* line 195, main.scss */
 .content {
-  padding: 0 0 250px;
-}
+  padding: 0 0 250px; }
 
-/* line 198, main.scss */
 .promo-block {
   background: #121212;
-  height: 455px;
-}
+  height: 455px; }
 
-/* line 202, main.scss */
 .promo-block .content-inner {
   background: url(../images/gad.png) no-repeat 10px -95px;
   height: 455px;
-  position: relative;
-}
+  position: relative; }
 
-/* line 207, main.scss */
 .promo-block .desc {
   text-align: center;
   color: #fff;
   position: absolute;
   top: 63px;
   width: 315px;
-  right: 62px;
-}
+  right: 62px; }
 
-/* line 215, main.scss */
 .desc h3 {
-  font: 30px/34px CalibriBold;
-  margin-bottom: 10px;
-}
+  font: 700 30px/34px 'Open Sans';
+  margin-bottom: 10px; }
 
-/* line 219, main.scss */
 .promo-menu {
   text-align: center;
-  margin-top: 17px;
-}
+  margin-top: 17px; }
 
-/* line 223, main.scss */
 .promo-menu li {
   display: inline-block;
   vertical-align: top;
-  margin: 0 10px;
-}
+  margin: 0 10px; }
 
-/* line 228, main.scss */
 .promo-menu a {
   color: #fff;
   text-decoration: none;
-  font-size: 18px;
-}
+  font-size: 14px;
+  margin-top: 3px;
+  display: inline-block; }
 
-/* line 233, main.scss */
 .promo-menu a.box-l {
   text-decoration: none;
   font-size: 16px;
@@ -298,18 +211,14 @@ nav li a:hover {
   color: #fff;
   display: block;
   width: 63px;
-  margin: 0 auto;
-}
+  margin: 0 auto; }
 
-/* line 242, main.scss */
 .desc > p {
   font-size: 20px;
   width: 240px;
   margin: 0 auto;
-  line-height: 24px;
-}
+  line-height: 24px; }
 
-/* line 248, main.scss */
 .blue-box {
   font-size: 37px;
   width: 62px;
@@ -332,10 +241,8 @@ nav li a:hover {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6edcf5', endColorstr='#00388a',GradientType=0 );
   /* IE6-9 */
   color: #fff;
-  text-shadow: 1px 1px 0px #00388A;
-}
+  text-shadow: 1px 1px 0px #00388A; }
 
-/* line 264, main.scss */
 .blue-box:hover {
   background: #69dfea;
   /* Old browsers */
@@ -352,22 +259,16 @@ nav li a:hover {
   background: linear-gradient(to bottom, #69dfea 0%, #032d6b 100%);
   /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#69dfea', endColorstr='#032d6b',GradientType=0 );
-  /* IE6-9 */
-}
+  /* IE6-9 */ }
 
-/* line 274, main.scss */
 .blue-box i {
-  line-height: 63px;
-}
+  line-height: 63px; }
 
-/* line 277, main.scss */
 .three-apps-block {
   padding: 20px 0;
   background: #101010;
-  overflow: hidden;
-}
+  overflow: hidden; }
 
-/* line 282, main.scss */
 .app-item {
   width: 300px;
   margin-right: 10px;
@@ -375,253 +276,176 @@ nav li a:hover {
   display: inline-block;
   vertical-align: top;
   height: 100px;
-  position: relative;
-}
+  position: relative; }
 
-/* line 291, main.scss */
-.three-apps-block .app-item:after {
-  content: '';
-  display: inline-block;
-  width: 100%;
-  height: 15px;
-  box-shadow: inset 0px -25px 15px -12px #101010;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
-
-/* line 301, main.scss */
 .app-item .left_ {
   float: left;
   width: 80px;
   height: 80px;
-  margin-right: 10px;
-}
+  margin-right: 10px; }
 
-/* line 307, main.scss */
 .app-item .left_ img {
   width: 80px;
-  height: 80px;
-}
+  height: 80px; }
 
-/* line 311, main.scss */
 .app-item .left img {
-  border-radius: 10px;
-}
+  border-radius: 10px; }
 
-/* line 314, main.scss */
 .app-item .right_ {
   float: left;
   color: #ccc;
-  width: 210px;
-}
+  width: 210px; }
 
-/* line 319, main.scss */
 .app-item .name {
-  font: 18px/15px CalibriBold;
+  font: 700 18px/15px 'Open Sans';
   margin-bottom: 4px;
-  text-decoration: underline;
-}
+  text-decoration: underline; }
 
-/* line 324, main.scss */
 .app-item .name:hover,
 .app-item:hover .name {
-  text-decoration: none;
-}
+  text-decoration: none; }
 
-/* line 328, main.scss */
 .app-item .genre {
-  font: 14px/16px CalibriBold;
-  margin-bottom: 4px;
-}
+  font: 600 14px/16px 'Open Sans';
+  margin-bottom: 4px; }
 
-/* line 332, main.scss */
 .genre i {
   margin-left: 2px;
   font-size: .9em;
   position: relative;
-  top: 1px;
-}
+  top: 1px; }
 
-/* line 338, main.scss */
 .app-item .description {
   font-size: 13px;
-  line-height: 16px;
-}
+  line-height: 16px; }
 
-/* line 342, main.scss */
 .apps-list {
-  margin-top: 30px;
-}
+  margin-top: 30px; }
 
-/* line 345, main.scss */
 h1.page-title {
-  font: 28px/32px CalibriBold;
+  font: 700 28px/32px 'Open Sans';
   color: #fff;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.7);
-  margin-bottom: 20px;
-}
+  margin-bottom: 20px; }
 
-/* line 352, main.scss */
 .apps-list .app-item {
-  margin-bottom: 20px;
-}
+  margin-bottom: 20px; }
 
-/* line 355, main.scss */
 .apps-list .app-item .name,
 .apps-list .app-item .genre {
-  color: #fff;
-}
+  color: #fff; }
 
-/* line 359, main.scss */
 .apps-list .app-item .genre i {
-  opacity: .8;
-}
+  opacity: .8; }
 
-/* line 362, main.scss */
 .app {
   overflow: hidden;
   margin-top: 30px;
-}
+  padding-bottom: 30px; }
 
-/* line 366, main.scss */
 .app .left_ {
   float: left;
   width: 180px;
-  margin-right: 20px;
-}
+  margin-right: 20px; }
 
-/* line 371, main.scss */
 .app .right_ {
-  float: left;
-}
+  float: left; }
 
-/* line 374, main.scss */
 .app .right_ .name {
-  font: 34px/38px CalibriBold;
+  font: 700 34px/38px 'Open Sans';
+  margin-bottom: 5px;
   color: #fff;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.7);
-}
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.7); }
 
-/* line 379, main.scss */
 .app .right_ .genre {
   font-size: 16px;
-  font-weight: 500;
-}
+  font-weight: 500; }
 
-/* line 383, main.scss */
 .app .right_ .params {
   overflow: hidden;
   margin-top: 10px;
   font-size: 16px;
   font-weight: 700;
-  color: #ccc;
-}
+  color: #ccc; }
 
-/* line 390, main.scss */
 .app .right_ .params > div {
   float: left;
-  margin-right: 20px;
-}
+  margin-right: 20px; }
 
-/* line 394, main.scss */
 .app .right_ .params .title {
   font-weight: 400;
   font-size: 15px;
-}
+  margin-bottom: 4px; }
 
-/* line 398, main.scss */
 .btn-android {
   margin-top: 10px;
   display: inline-block;
   width: 138px;
   height: 41px;
-  background: url(../images/buttons.png) no-repeat 0 0;
-}
+  background: url(../images/buttons.png) no-repeat 0 0; }
 
-/* line 405, main.scss */
 .btn-ios {
   margin-top: 10px;
   display: inline-block;
   width: 137px;
   height: 41px;
-  background: url(../images/buttons.png) no-repeat -140px 0;
-}
+  background: url(../images/buttons.png) no-repeat -140px 0; }
 
-/* line 412, main.scss */
+.app .size {
+  font-weight: 300;
+  font-size: 14px; }
+
 .slider {
   padding: 20px 0;
   background: #dbdbdb;
-  overflow: hidden;
-}
+  overflow: hidden; }
 
-/* line 417, main.scss */
 .slider img {
   margin: 0 5px;
   float: left;
-  height: 170px;
-}
+  height: 170px; }
 
-/* line 422, main.scss */
 .app-descripton {
   padding: 30px 0;
   background: #f8f8f8;
   color: #434343;
   font-size: 14px;
-  line-height: 18px;
-}
+  line-height: 18px; }
 
-/* line 429, main.scss */
 .app-descripton h2 {
-  font: 24px/28px CalibriBold;
-  margin-bottom: 15px;
-}
+  font: 700 24px/28px 'Open Sans';
+  margin-bottom: 15px; }
 
-/* line 433, main.scss */
 .app-descripton p {
-  margin-bottom: 8px;
-}
+  margin-bottom: 8px; }
 
-/* line 436, main.scss */
 .app-descripton ul + h4,
 .app-descripton p + h4 {
-  margin-top: 20px;
-}
+  margin-top: 20px; }
 
-/* line 440, main.scss */
 .app-descripton h4 {
   color: #005ea5;
   font-size: 16px;
   font-weight: 700;
-  margin-bottom: 10px;
-}
+  margin-bottom: 10px; }
 
-/* line 446, main.scss */
 .app-descripton ul {
   list-style-type: disc;
-  margin-left: 20px;
-}
+  margin-left: 20px; }
 
-/* line 450, main.scss */
 .app-descripton ol {
   list-style-type: decimal;
-  margin-left: 25px;
-}
+  margin-left: 25px; }
 
-/* line 454, main.scss */
 .app-descripton li {
   margin-bottom: 3px;
-  color: #005ea5;
-}
+  color: #005ea5; }
 
-/* line 458, main.scss */
 .app-descripton li span {
-  color: #434343;
-}
+  color: #434343; }
 
 /* Footer
 -----------------------------------------------------------------------------*/
-/* line 463, main.scss */
 .footer {
   padding: 0 10px;
   width: 960px;
@@ -629,31 +453,23 @@ h1.page-title {
   height: 220px;
   color: #9b9999;
   position: relative;
-  padding-top: 30px;
-}
+  padding-top: 30px; }
 
-/* line 472, main.scss */
 .footer h6 {
-  font: 15px/18px CalibriBold;
-  margin-bottom: 10px;
-}
+  font: 700 15px/18px 'Open Sans';
+  margin-bottom: 10px; }
 
-/* line 476, main.scss */
 .footer p {
   margin-bottom: 8px;
-  font: 300 13px/16px Calibri;
-}
+  font: 400 13px/16px 'Open Sans'; }
 
-/* line 480, main.scss */
 .about-us-block {
   width: 600px;
   float: left;
   padding-right: 10px;
   margin-right: 22px;
-  position: relative;
-}
+  position: relative; }
 
-/* line 487, main.scss */
 .about-us-block:after {
   content: '';
   display: inline-block;
@@ -662,79 +478,57 @@ h1.page-title {
   background: #1e1e1e;
   position: absolute;
   top: 32px;
-  right: 0px;
-}
+  right: 0px; }
 
-/* line 498, main.scss */
 .copyright {
-  color: #5a5a5a;
-}
+  color: #5a5a5a; }
 
-/* line 501, main.scss */
 .footer .contacts-block {
   width: 280px;
-  float: left;
-}
+  float: left; }
 
-/* line 505, main.scss */
 .contact-item {
-  overflow: hidden;
-}
+  overflow: hidden; }
 
-/* line 508, main.scss */
 .contact-item p {
   float: left;
   font-weight: 600;
   font-size: 14px;
-  width: 138px;
-}
+  width: 138px; }
 
-/* line 514, main.scss */
 .contact-item .ct {
-  font: 300 13px/16px Calibri;
+  font: 400 13px/16px 'Open Sans';
   float: left;
-  width: 70px;
-}
+  width: 70px; }
 
-/* line 519, main.scss */
 .footer .company-name {
-  font-family: CalibriBold;
+  font-family: 'Open Sans';
   font-size: 16px;
-}
+  font-weight: 700; }
 
-@media only screen and (max-device-width: 1100px) {
-  /* line 524, main.scss */
+@media screen and (max-width: 768px) {
   .wrapper {
-    min-width: 960px;
+    min-width: 980px;
     max-width: 1920px;
-    /* padding: 0 10px; */
     margin: 0 auto;
     min-height: 100%;
     height: auto !important;
-    height: 100%;
-  }
+    height: 100%; }
 
-  /* line 533, main.scss */
   .content-inner {
     padding: 0 10px;
     width: 940px;
-    margin: 0 auto;
-  }
+    margin: 0 auto; }
 
   /* Header
   -----------------------------------------------------------------------------*/
-  /* line 541, main.scss */
   .header {
     height: 160px;
-    background: url(../images/menu_glava_bg_m.jpg) no-repeat center;
-  }
+    background: url(../images/menu_glava_bg_m.jpg) no-repeat center; }
 
-  /* line 545, main.scss */
   .line-b_ {
-    position: relative;
-  }
+    position: relative; }
 
-  /* line 548, main.scss */
   .line-b_:after {
     content: '';
     display: block;
@@ -742,48 +536,36 @@ h1.page-title {
     height: 1px;
     position: absolute;
     bottom: 0px;
-    background: url(../images/home_glava_bg_rob.jpg) no-repeat center;
-  }
+    background: url(../images/home_glava_bg_rob.jpg) no-repeat center; }
 
-  /* line 557, main.scss */
   .header .content-inner {
     /* overflow: hidden; */
-    position: relative;
-  }
+    position: relative; }
 
-  /* line 561, main.scss */
   .logo {
     width: 400px;
     margin: 10px auto;
     float: none;
-    display: block;
-  }
+    display: block; }
 
-  /* line 567, main.scss */
   nav {
     overflow: hidden;
     float: none;
     margin: 10px 0;
-    text-align: center;
-  }
+    text-align: center; }
 
-  /* line 573, main.scss */
   nav li {
     float: none;
     display: inline-block;
     vertical-align: top;
-    margin: 0 10px;
-  }
+    margin: 0 10px; }
 
-  /* line 579, main.scss */
   nav li a {
     color: #fff;
     text-decoration: none;
-    font: 42px/48px CalibriBold;
-    text-transform: uppercase;
-  }
+    font: 700 42px/48px 'Open Sans';
+    text-transform: uppercase; }
 
-  /* line 586, main.scss */
   .select-lang {
     text-align: center;
     width: 24px;
@@ -791,42 +573,30 @@ h1.page-title {
     top: -6px;
     font-size: 14px;
     color: #9b9999;
-    right: 20px;
-  }
+    right: 20px; }
 
-  /* line 595, main.scss */
   .select-lang span {
     cursor: pointer;
-    display: inline-block;
-  }
+    display: inline-block; }
 
-  /* line 599, main.scss */
   .select-lang > div span {
-    border-bottom: 1px dotted #9b9999;
-  }
+    border-bottom: 1px dotted #9b9999; }
 
-  /* line 602, main.scss */
   .select-lang > div span:hover {
     border-color: #fff;
-    color: #fff;
-  }
+    color: #fff; }
 
-  /* line 606, main.scss */
   .select-lang span:hover,
   .select-lang .select span {
-    color: #fff;
-  }
+    color: #fff; }
 
-  /* line 610, main.scss */
   .select-lang ul {
     margin-top: 7px;
     padding: 3px 0;
     background: #212121;
     position: relative;
-    z-index: 10;
-  }
+    z-index: 10; }
 
-  /* line 617, main.scss */
   .select-lang ul:after {
     content: '';
     position: absolute;
@@ -835,31 +605,23 @@ h1.page-title {
     margin-left: -5px;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
-    border-bottom: 7px solid #212121;
-  }
+    border-bottom: 7px solid #212121; }
 
   /* Middle
   -----------------------------------------------------------------------------*/
-  /* line 629, main.scss */
   .content {
-    padding: 0 0 250px;
-  }
+    padding: 0 0 250px; }
 
-  /* line 632, main.scss */
   .promo-block {
     background: #121212;
     height: auto;
-    padding-bottom: 85px;
-  }
+    padding-bottom: 85px; }
 
-  /* line 637, main.scss */
   .promo-block .content-inner {
     background: none;
     height: auto;
-    position: relative;
-  }
+    position: relative; }
 
-  /* line 642, main.scss */
   .promo-block .desc {
     text-align: center;
     color: #fff;
@@ -867,40 +629,30 @@ h1.page-title {
     top: 40px;
     width: 700px;
     margin: 0 auto;
-    right: 0;
-  }
+    right: 0; }
 
-  /* line 651, main.scss */
   .desc h3 {
-    font: 68px/72px CalibriBold;
+    font: 700 68px/72px 'Open Sans';
     /* margin-bottom: 35px; */
     width: 610px;
-    margin: 0 auto 26px;
-  }
+    margin: 0 auto 26px; }
 
-  /* line 657, main.scss */
   .promo-menu {
     text-align: center;
-    margin-top: 28px;
-  }
+    margin-top: 28px; }
 
-  /* line 661, main.scss */
   .promo-menu li {
     display: inline-block;
     vertical-align: top;
-    margin: 0 30px;
-  }
+    margin: 0 30px; }
 
-  /* line 666, main.scss */
   .promo-menu a {
     color: #fff;
     text-decoration: none;
     font-size: 50px;
     margin-top: 17px;
-    display: inline-block;
-  }
+    display: inline-block; }
 
-  /* line 673, main.scss */
   .promo-menu a.box-l {
     text-decoration: none;
     font-size: 16px;
@@ -908,39 +660,29 @@ h1.page-title {
     color: #fff;
     display: block;
     width: 280px;
-    margin: 0 auto;
-  }
+    margin: 0 auto; }
 
-  /* line 682, main.scss */
   .desc > p {
     font-size: 44px;
     width: 475px;
     margin: 0 auto;
-    line-height: 48px;
-  }
+    line-height: 48px; }
 
-  /* line 688, main.scss */
   .blue-box {
     font-size: 182px;
     width: 280px;
     height: 280px;
-    border-radius: 15px;
-  }
+    border-radius: 15px; }
 
-  /* line 694, main.scss */
   .blue-box i {
-    line-height: 280px;
-  }
+    line-height: 280px; }
 
-  /* line 697, main.scss */
   .three-apps-block {
     padding: 20px 0;
     background: #101010;
     overflow: hidden;
-    display: none;
-  }
+    display: none; }
 
-  /* line 703, main.scss */
   .app-item {
     width: 100%;
     margin-right: 0;
@@ -948,285 +690,193 @@ h1.page-title {
     display: block;
     /* vertical-align: top; */
     height: auto;
-    position: relative;
-  }
+    position: relative; }
 
-  /* line 712, main.scss */
-  .three-apps-block .app-item:after {
-    content: '';
-    display: inline-block;
-    width: 100%;
-    height: 15px;
-    box-shadow: inset 0px -25px 15px -12px #101010;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-  }
-
-  /* line 722, main.scss */
   .app-item .left_ {
     float: left;
     width: 210px;
     height: 210px;
-    margin-right: 40px;
-  }
+    margin-right: 40px; }
 
-  /* line 728, main.scss */
   .app-item .left_ img {
     width: 210px;
-    height: 210px;
-  }
+    height: 210px; }
 
-  /* line 732, main.scss */
   .app-item .left img {
-    border-radius: 10px;
-  }
+    border-radius: 10px; }
 
-  /* line 735, main.scss */
   .app-item .right_ {
     /* float: left; */
     /* color: #ccc; */
-    width: 600px;
-  }
+    width: 600px; }
 
-  /* line 740, main.scss */
   .app-item .name {
-    font: 40px/45px CalibriBold;
+    font: 700 40px/45px 'Open Sans';
     margin-bottom: 0px;
-    /* text-decoration: underline; */
-  }
+    /* text-decoration: underline; */ }
 
-  /* line 745, main.scss */
   .app-item .genre {
-    font: 26px/30px CalibriBold;
-    margin-bottom: 4px;
-  }
+    font: 700 26px/30px 'Open Sans';
+    margin-bottom: 4px; }
 
-  /* line 749, main.scss */
   .genre i {
     margin-left: 2px;
     font-size: .9em;
     position: relative;
-    top: 1px;
-  }
+    top: 1px; }
 
-  /* line 755, main.scss */
   .app-item .description {
     font-size: 24px;
-    line-height: 28px;
-  }
+    line-height: 28px; }
 
-  /* line 759, main.scss */
   .apps-list {
     margin-top: 0;
     background: #1e1e1e;
     padding-top: 30px;
-    padding-bottom: 30px;
-  }
+    padding-bottom: 30px; }
 
-  /* line 765, main.scss */
   .apps-list .content-inner {
     width: 895px;
-    margin: 0 auto;
-  }
+    margin: 0 auto; }
 
-  /* line 769, main.scss */
   h1.page-title {
-    font: 66px/72px CalibriBold;
+    font: 700 66px/72px 'Open Sans';
     color: #fff;
     /* text-shadow: 0 1px 1px rgba(0,0,0,.7); */
-    margin-bottom: 26px;
-  }
+    margin-bottom: 26px; }
 
-  /* line 776, main.scss */
   .apps-list .app-item {
     margin-bottom: 40px;
     padding: 15px;
-    /* background: #ccc; */
-  }
+    /* background: #ccc; */ }
 
-  /* line 781, main.scss */
   .apps-list .app-item .name,
   .apps-list .app-item .genre {
-    color: #fff;
-  }
+    color: #fff; }
 
-  /* line 785, main.scss */
   .apps-list .app-item .genre i {
-    opacity: .8;
-  }
+    opacity: .8; }
 
-  /* line 788, main.scss */
   .app {
     overflow: hidden;
     padding: 30px 0;
     margin: 0 auto;
-    width: 895px;
-  }
+    width: 895px; }
 
-  /* line 794, main.scss */
   .app .left_ {
     float: left;
     width: 290px;
     margin-right: 20px;
-    height: 290px;
-  }
+    height: 290px; }
 
-  /* line 800, main.scss */
   .app .left_ img {
     width: 290px;
-    height: 290px;
-  }
+    height: 290px; }
 
-  /* line 804, main.scss */
   .app .right_ {
-    float: left;
-  }
+    float: left; }
 
-  /* line 807, main.scss */
   .app .right_ .name {
-    font: 700 62px/68px Calibri;
+    font: 700 62px/68px 'Open Sans';
     color: #fff;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.7);
-  }
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.7); }
 
-  /* line 812, main.scss */
   .app .right_ .genre {
     font-size: 24px;
-    font-weight: 500;
-  }
+    font-weight: 500; }
 
-  /* line 816, main.scss */
   .app .right_ .params {
     /* overflow: hidden; */
     /* margin-top: 10px; */
     font-size: 22px;
     /* font-weight: 700; */
-    /* color: #ccc; */
-  }
+    /* color: #ccc; */ }
 
-  /* line 823, main.scss */
   .apps-head {
-    background: #1e1e1e;
-  }
+    background: #1e1e1e; }
 
-  /* line 826, main.scss */
   .app .right_ .params > div {
     float: none;
-    margin-right: 20px;
-  }
+    margin-right: 20px; }
 
-  /* line 830, main.scss */
   .app .right_ .params .title {
     font-weight: 400;
     font-size: 22px;
-    margin-bottom: 10px;
-  }
+    margin-bottom: 10px; }
 
-  /* line 835, main.scss */
   .btn-android {
     margin-top: 10px;
     display: inline-block;
     width: 138px;
     height: 41px;
-    background: url(../images/buttons.png) no-repeat 0 0;
-  }
+    background: url(../images/buttons.png) no-repeat 0 0; }
 
-  /* line 842, main.scss */
   .btn-ios {
     margin-top: 10px;
     display: inline-block;
     width: 137px;
     height: 41px;
-    background: url(../images/buttons.png) no-repeat -140px 0;
-  }
+    background: url(../images/buttons.png) no-repeat -140px 0; }
 
-  /* line 849, main.scss */
   .slider {
     padding: 20px 0;
-    background: #dbdbdb;
-  }
+    background: #dbdbdb; }
 
-  /* line 853, main.scss */
   .slider-box {
     width: 895px;
-    margin: 0 auto;
-  }
+    margin: 0 auto; }
 
-  /* line 857, main.scss */
   .app-descripton {
     /* padding: 30px 0; */
     /* background: #f8f8f8; */
     /* color: #434343; */
     font-size: 24px;
-    line-height: 28px;
-  }
+    line-height: 28px; }
 
-  /* line 864, main.scss */
   .app-descripton .content-inner {
     width: 895px;
-    margin: 0 auto;
-  }
+    margin: 0 auto; }
 
-  /* line 868, main.scss */
   .app-descripton h2 {
-    font: 700 44px/48px Calibri;
-    /* margin-bottom: 15px; */
-  }
+    font: 700 44px/48px 'Open Sans';
+    /* margin-bottom: 15px; */ }
 
-  /* line 872, main.scss */
   .app-descripton p {
-    margin-bottom: 8px;
-  }
+    margin-bottom: 8px; }
 
-  /* line 875, main.scss */
   .app-descripton ul + h4,
   .app-descripton p + h4 {
-    /* margin-top: 20px; */
-  }
+    /* margin-top: 20px; */ }
 
-  /* line 879, main.scss */
   .app-descripton h4 {
     /* color: #005ea5; */
     font-size: 32px;
     /* font-weight: 700; */
-    /* margin-bottom: 10px; */
-  }
+    /* margin-bottom: 10px; */ }
 
-  /* line 885, main.scss */
   .app-descripton ul {
     /* list-style-type: disc; */
-    margin-left: 30px;
-  }
+    margin-left: 30px; }
 
-  /* line 889, main.scss */
   .app-descripton ol {
     /* list-style-type: decimal; */
-    margin-left: 35px;
-  }
+    margin-left: 35px; }
 
-  /* line 893, main.scss */
   .app-descripton li {
     margin-bottom: 3px;
-    color: #005ea5;
-  }
+    color: #005ea5; }
 
-  /* line 897, main.scss */
   .app-descripton li span {
-    color: #434343;
-  }
+    color: #434343; }
 
-  /* line 900, main.scss */
   .more-btn-box {
-    text-align: center;
-  }
+    text-align: center; }
 
-  /* line 903, main.scss */
   .more-btn {
     display: inline-block;
     cursor: pointer;
     color: #fff;
-    font: 700 30px/76px Calibri;
+    font: 700 30px/76px 'Open Sans';
     padding: 0 50px;
     border-radius: 8px;
     background: #232121;
@@ -1244,10 +894,8 @@ h1.page-title {
     background: linear-gradient(to bottom, #222020 0%, #010101 100%);
     /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#232121', endColorstr='#010101',GradientType=0 );
-    /* IE6-9 */
-  }
+    /* IE6-9 */ }
 
-  /* line 919, main.scss */
   .more-btn:hover {
     background: #1c1a1a;
     /* Old browsers */
@@ -1264,12 +912,10 @@ h1.page-title {
     background: linear-gradient(to bottom, #1c1a1a 0%, #000000 100%);
     /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c1a1a', endColorstr='#000000',GradientType=0 );
-    /* IE6-9 */
-  }
+    /* IE6-9 */ }
 
   /* Footer
   -----------------------------------------------------------------------------*/
-  /* line 931, main.scss */
   .footer {
     padding: 0 10px;
     width: 940px;
@@ -1277,33 +923,25 @@ h1.page-title {
     height: 220px;
     color: #9b9999;
     position: relative;
-    padding-top: 30px;
-  }
+    padding-top: 30px; }
 
-  /* line 940, main.scss */
   .footer h6 {
     /* float: left; */
-    font: 28px/32px CalibriBold;
-    margin-bottom: 10px;
-  }
+    font: 700 28px/32px 'Open Sans';
+    margin-bottom: 10px; }
 
-  /* line 945, main.scss */
   .footer p {
     margin-bottom: 8px;
-    font: 300 13px/16px Calibri;
-  }
+    font: 400 13px/16px 'Open Sans'; }
 
-  /* line 949, main.scss */
   .about-us-block {
     width: 600px;
     float: left;
     padding-right: 10px;
     margin-right: 22px;
     position: relative;
-    display: none;
-  }
+    display: none; }
 
-  /* line 957, main.scss */
   .about-us-block:after {
     content: '';
     display: inline-block;
@@ -1312,50 +950,36 @@ h1.page-title {
     background: #1e1e1e;
     position: absolute;
     top: 32px;
-    right: 0px;
-  }
+    right: 0px; }
 
-  /* line 967, main.scss */
   .copyright {
-    color: #5a5a5a;
-  }
+    color: #5a5a5a; }
 
-  /* line 970, main.scss */
   .footer .first-item {
-    width: 150px;
-  }
+    width: 150px; }
 
-  /* line 973, main.scss */
   .footer .contacts-block {
     width: 100%;
-    float: none;
-  }
+    float: none; }
 
-  /* line 977, main.scss */
   .contact-item {
     overflow: hidden;
-    float: left;
-  }
+    float: left; }
 
-  /* line 981, main.scss */
   .contact-item p {
     float: left;
     font-weight: 600;
     font-size: 22px;
     width: 251px;
-    line-height: 26px;
-  }
+    line-height: 26px; }
 
-  /* line 988, main.scss */
   .contact-item .ct {
-    font: 26px/32px CalibriRegular;
+    font: 700 26px/32px 'Open Sans';
     float: none;
     width: auto;
-    color: #EAE4E4;
-  }
+    color: #EAE4E4; }
 
-  /* line 994, main.scss */
   .footer .company-name {
-    font-size: 26px;
-  }
-}
+    font-size: 26px; } }
+
+/*# sourceMappingURL=main.css.map */

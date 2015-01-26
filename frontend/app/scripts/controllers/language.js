@@ -43,10 +43,13 @@ function LanguageController($scope, languageResource, defaultLanguage, $window, 
     });
 
     $scope.getStaticData($scope.language.title);
-
+    $scope.showMenu = function() {
+        $scope.show = true;
+    }
     $scope.update = function (lang) {
         $scope.language = lang;
         $scope.getStaticData($scope.language.title);
         $route.reload();
+        $scope.show = false;
     }
 }

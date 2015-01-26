@@ -35,8 +35,8 @@
                       </ul>
                   </nav>
                   <div class="select-lang">
-                      <div><span>{{ language.title | uppercase }}</span></div>
-                      <ul>
+                      <div ng-click="showMenu()"><span>{{ language.title | uppercase }}</span></div>
+                      <ul ng-show="false">
                           <li ng-repeat="lang in languages" ng-class="{select: language.title == lang.title}" ng-click="update(lang)"><span>{{ lang.title | uppercase }}</span></li>
                       </ul>
                   </div>
@@ -44,6 +44,7 @@
           </div>
 
         <div ng-view="" ng-cloak class="content"></div>
+      </div>
       <footer class="footer">
           <div class="content-inner">
               <div class="about-us-block">
@@ -71,7 +72,6 @@
               </div>
           </div>
       </footer>
-    </div>
   </div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
